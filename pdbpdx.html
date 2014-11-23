@@ -51,8 +51,9 @@
                 </section>
 
                 <section>
+                    <section>
                     <h2>python's first debug</h2>
-                    <h3>print...</h3>
+                    <h3>print!</h3>
                     <pre class="python fragment"><code class="py" data-trim contenteditable>
 for j in js:
     mn = j.get('model','unkown')
@@ -71,10 +72,22 @@ for j in js:
     js2[mn]=js2.get(mn,[])+[j]
     print '\n\nline 72 of time_utils.py WTF', js2.get(mn,[])+[j], '\n\n'
                     </code></pre>
+                    
+                    </section>
 
-                    <aside class="notes">
-                        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-                    </aside>
+                    <section>
+                    <h2>Sublime Snippet to do just that!</h2>
+                    <pre class="xml"><code class="xml">
+<snippet>
+    <content><![CDATA[print "\n\n\nline $TM_LINE_NUMBER of $TM_FILENAME", ${0:var name}, "\n\n\n"]]>
+    </content>
+    <tabTrigger>pppp</tabTrigger>
+    <scope>source.python.django</scope>
+    <description>print "\n\n\n...", ..., "\n\n\n"</description> 
+</snippet>
+
+                    </code></pre>
+                    </section>
                 </section>
 
                 <!-- Example of nested vertical slides -->
