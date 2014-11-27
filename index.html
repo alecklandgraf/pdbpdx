@@ -103,10 +103,27 @@ for j in js:
                 </section>
 
                 <section>
+                	<h2>The three steps to debugging</h2>
+                	<ol>
+                		<li>print debug info</li>
+                		<li>jump </li>
+                	</ol>
+                </section>
+
+                <section>
                     <h2>pudb</h2>
                     <p>
                         View local variables, create watches, jump into ipython shell!
                     </p>
+                    <p>
+                    	Get started in two steps:
+                    </p>
+                    <ul>
+                    	<li>pip install pudb</li>
+                    	<li>python -m pudb.run script.py</li>
+                    	<p>or</p>
+                    	<li>from pudb import set_trace; set_trace()</li>
+                    </ul>
                     <ul>
 						<li>b - breakpoint</li>
 						<li>s - step into</li>
