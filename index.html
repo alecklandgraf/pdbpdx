@@ -54,19 +54,19 @@
                     <section>
                     <h2>python's first debug</h2>
                     <h3>print!</h3>
-                    <pre class="python fragment"><code class="py" data-trim contenteditable>
+                    <pre class="python fragment"><code class="py" data-trim >
 for j in js:
     mn = j.get('model','unkown')
     js2[mn]=js2.get(mn,[])+[j]
                     </code></pre>
-                    <pre class="python fragment"><code class="py" data-trim contenteditable>
+                    <pre class="python fragment"><code class="py" data-trim >
 for j in js:
     mn = j.get('model','unkown')
     js2[mn]=js2.get(mn,[])+[j]
     print 'WTF', js2.get(mn,[])+[j]
                     </code></pre>
                     <p class="fragment">better yet</p>
-                    <pre class="python fragment"><code class="py" data-trim contenteditable>
+                    <pre class="python fragment"><code class="py" data-trim >
 for j in js:
     mn = j.get('model','unkown')
     js2[mn]=js2.get(mn,[])+[j]
@@ -90,7 +90,7 @@ for j in js:
                     </section>
                     <section>
                         <h4>and of course, you might have to use logger</h4>
-                        <pre class="python"><code class="py" data-trim contenteditable>
+                        <pre class="python"><code class="py" data-trim >
 import logging
 logger = logging.getLogger(__name__)
 for j in js:
@@ -106,8 +106,18 @@ for j in js:
                 	<h2>The three steps to debugging</h2>
                 	<ol>
                 		<li>print debug info</li>
-                		<li>jump </li>
+                		<li>jump into the shell</li>
+                		<li>debugger</li>
                 	</ol>
+                </section>
+                <section>
+                	<h2>entering the shell</h2>
+                	<p>
+                		<pre class="bash"><code class="bash" data-trim>
+$ pip install ipython
+$ ipython
+                    </code></pre>
+                	</p>
                 </section>
 
                 <section>
