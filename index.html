@@ -49,6 +49,22 @@
                         <small>Created by Aleck Landgraf / <a href="http://twitter.com/aleck_landgraf">@aleck_landgraf</a></small>
                     </p>
                 </section>
+                <section>
+                	<h2>Why debugging? <span class="fragment">WTF?</span></h2>
+                	<pre class="python"><code class="py" data-trim >
+for j in js:
+    mn = j.get('model','unkown')
+    js2[mn]=js2.get(mn,[])+[j]
+                    </code></pre>
+                </section>
+                <section>
+                	<h2>The three steps to debugging</h2>
+                	<ol>
+                		<li>print debug info</li>
+                		<li>jump into the shell</li>
+                		<li>debugger</li>
+                	</ol>
+                </section>
 
                 <section>
                     <section>
@@ -102,14 +118,6 @@ for j in js:
                     </section>
                 </section>
 
-                <section>
-                	<h2>The three steps to debugging</h2>
-                	<ol>
-                		<li>print debug info</li>
-                		<li>jump into the shell</li>
-                		<li>debugger</li>
-                	</ol>
-                </section>
                 <section>
                 	<h2>entering the shell</h2>
                 	<p>
