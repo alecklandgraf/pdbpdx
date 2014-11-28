@@ -237,6 +237,40 @@ Source:
 ```
                 		</p>
                 	</section>
+                	<section>
+                		<h3>dir and __dict__</h3>
+                		<p data-markdown>
+```pycon
+In [1]: class Greeter(object):
+    def __init__(self, name='Aleck'):
+        super(Greeter, self).__init__()
+        self.name = name
+
+    def greet(self):
+        """prints hello ``self.name``"""
+        print 'hello {}'.format(self.name)
+
+In [2]: d = Greeter()
+
+```
+                		</p>
+                		<p class="fragment">dir</p>
+                		<p data-markdown class="fragment">
+```pycon
+In [3]: dir(d)
+Out[3]:
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'greet', 'name']
+```
+                		</p>
+                		<p class="fragment">__dict__</p>
+                		<p data-markdown class="fragment">
+```pycon
+In [4]: d.__dict__
+Out[4]: {'name': 'Aleck'}
+
+```
+                		</p>
+                	</section>
                 </section>
 
                 <section>
@@ -297,6 +331,7 @@ set_trace()
                         <li><a href="https://pypi.python.org/pypi/ipython">ipython</a></li>
                         <li><a href="https://pypi.python.org/pypi/pudb">pudb</a></li>
                         <li><a href="https://pypi.python.org/pypi/nose-pudb">nose + pudb</a></li>
+                        <li><a href="https://getsentry.com/welcome/">sentry</a></li>
 
                     </ul>
                 </section>
