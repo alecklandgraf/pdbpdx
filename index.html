@@ -120,11 +120,11 @@ for j in js:
 
                 <section>
                 	<h2>entering the shell</h2>
-                	<p>
-                		<pre class="bash"><code class="bash" data-trim>
+                	<p data-markdown>
+```console
 $ pip install ipython
 $ ipython
-                    </code></pre>
+```
                 	</p>
                 </section>
 
@@ -135,31 +135,44 @@ $ ipython
 		                    <ul>
 		                        <li>view local variables</li>
 		                        <li>create watches</li>
-		                        <li>jump into ipython shell</li>
+		                        <li>jump into ipython shell (and create vars)</li>
 								<li>enter exceptions!</li>
 								<li>jump through stack</li>
+								<li>view return before returning</li>
 		                    </ul>
 	                    </p>
                 	</section>
                 	<section>
                     <h3>
-                    	Get started in two steps:
+                    	Getting started
                     </h3>
                     <ul>
-                    	<li>pip install pudb</li>
-                    	<li>python -m pudb.run script.py</li>
-                    	<p><strong>or</strong></p>
-                    	<li>from pudb import set_trace; set_trace()</li>
+                    	<p>install</p>
+                    	<li data-markdown>```console
+$ pip install pudb
+                    	```</li>
+                    	<p>run a script through pudb</p>
+                    	<li data-markdown>```console
+$ python -m pudb.run script.py
+                    	```</li>
+                    	<p>within your code</p>
+                    	<li data-markdown>```python
+from pudb import set_trace
+set_trace()
+```
+						</li>
                     </ul>
                 	</section>
 					<section>
-						<h3>cheat sheet</h3>
+						<h3>pudb cheat sheet</h3>
 	                    <ul>
 							<li>b - breakpoint</li>
 							<li>s - step into</li>
 							<li>n - next statement</li>
 							<li>c - continue</li>
-							<li>t - teleport (jump to)</li>
+							<li>t - teleport <span style="color: #333;">(jump to)</span></li>
+							<li>/ - search</li>
+							<li>m - view a module's source code</li>
 							<li>q - quit</li>
 						</ul>
 					</section>	
