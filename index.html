@@ -194,6 +194,49 @@ time.asctime       time.daylight      time.mktime        time.strptime      time
 ```
                 		</p>
                 	</section>
+                	<section>
+                		<h3>? and ??</h3>
+                		<p data-markdown>
+```pycon
+In [1]: class Greeter(object):
+    def __init__(self, name='Aleck'):
+        super(Greeter, self).__init__()
+        self.name = name
+
+    def greet(self):
+        """prints hello ``self.name``"""
+        print 'hello {}'.format(self.name)
+
+In [2]: d = Greeter()
+
+```
+                		</p>
+                		<p class="fragment">?</p>
+                		<p data-markdown class="fragment">
+```pycon
+In [3]: d.greet?
+Type:        instancemethod
+String form: <bound method Greeter.greet of <__main__.Greeter object at 0x10396bd50>>
+File:        /code/pdbpdx/<ipython-input-13-2d3119123697>
+Definition:  d.greet(self)
+Docstring:   prints hello ``self.name``
+
+```
+                		</p>
+                		<p class="fragment">??</p>
+                		<p data-markdown class="fragment">
+```pycon
+In [4]: d.greet??
+Type:        instancemethod
+...
+Source:
+    def greet(self):
+        """prints hello ``self.name``"""
+        print 'hello {}'.format(self.name)
+
+```
+                		</p>
+                	</section>
                 </section>
 
                 <section>
