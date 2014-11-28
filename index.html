@@ -19,6 +19,7 @@
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
         <!-- If the query includes 'print-pdf', include the PDF print sheet -->
         <script>
@@ -119,13 +120,68 @@ for j in js:
                 </section>
 
                 <section>
-                	<h2>entering the shell</h2>
-                	<p data-markdown>
+                	<section>
+                		<h2>entering the shell</h2>
+                		<p>with <strong>ipython</strong></p>
+                		<ul>
+                			<li>tab completion</li>
+                			<li>function? and function??</li>
+                			<li>%history</li>
+                			<li>%cpaste and %pate</li>
+                			<li>%autoindent</li>
+                			<li>os commands work: cd ls</li>
+                			<li>notebook</li>
+                			<li>%pastebin (<i class="fa fa-github"></i>)</li>
+                			<li>check out %magic or %quickref</li>
+                		</ul>
+            		</section>
+            		<section>
+                		<p>
+                			some regular python Kung Fu
+                		</p>
+                		<ul>
+                			<li>_</li>
+                			<li>obj.__dict__</li>
+                			<li>dir(obj)</li>
+                		</ul>
+                		<p class="fragment" data-markdown>
+```pycon
+In [1]: time.time()
+Out[1]: 1417210518.229331
+
+In [2]: t = _
+```
+                		</p>
+                	</section>
+                	<section>
+                		<h3>install ipython</h3>
+                		<p data-markdown>
 ```console
 $ pip install ipython
 $ ipython
 ```
-                	</p>
+                		</p>
+                	</section>
+                	<section>
+                		<h3>tab completion</h3>
+                		<p data-markdown>
+```pycon
+In [1]: import time
+
+In [2]: time.
+```
+                		</p>
+                		<p class="fragment">TAB</p>
+                		<p data-markdown class="fragment">
+```pycon
+In [2]: time.
+time.accept2dyear  time.clock         time.gmtime        time.sleep         time.struct_time   time.tzname
+time.altzone       time.ctime         time.localtime     time.strftime      time.time          time.tzset
+time.asctime       time.daylight      time.mktime        time.strptime      time.timezone
+
+```
+                		</p>
+                	</section>
                 </section>
 
                 <section>
