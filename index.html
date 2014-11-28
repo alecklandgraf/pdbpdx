@@ -63,7 +63,9 @@ for j in js:
                 <section>
                 	<h2>steps to debugging</h2>
                 	<ol>
+                		<li>linter</li>
                 		<li>print debug info</li>
+                		<li>read the traceback</li>
                 		<li>jump into the shell</li>
                 		<li>debugger</li>
                 		<li class="fragment">add tests</li>
@@ -324,7 +326,50 @@ set_trace()
 							<li>m - view a module's source code</li>
 							<li>q - quit</li>
 						</ul>
-					</section>	
+					</section>
+					<section>
+						<h3>common debugger patterns</h3>
+						<p>
+							<ul>
+								<li>handle errors over long iterations</li>
+								<li>access local variables with names like: 'n', 'c', 'q', 's'</li>
+								<li>profile: memory, counts, CPU</li>
+								<li>flake8</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<p>handle errors over long iterations</p>
+						<p data-markdown>
+```python
+for u in users:
+    u.set_home_location()
+```
+							
+						</p>
+						<p class="fragment">BLAMO!!! OK, try this...</p>
+						<p data-markdown class="fragment">
+```python
+for u in users:
+    try:
+        u.set_home_location()
+    except KeyError:
+        import pudb; pudb.set_trace()
+```
+							
+						</p>
+					</section>
+                </section>
+
+                <section>
+                	<h2>steps to prevent debugging</h2>
+                	<ol>
+                		<li>you have a linter, right?</li>
+                		<li>access to all errors and tracebacks?</li>
+                		<li>flake8 should pass for tests to pass</li>
+                		<li>draw a line in the sand: test your code coverage</li>
+                		<li>add tests to prevent regressions</li>
+                	</ol>
                 </section>
 
                 <section>
