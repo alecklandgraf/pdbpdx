@@ -339,7 +339,7 @@ set_trace()
 						</p>
 					</section>
 					<section>
-						<p>handle errors over long iterations</p>
+						<h3>handle errors over long iterations</h3>
 						<p data-markdown>
 ```python
 for u in users:
@@ -358,6 +358,21 @@ for u in users:
 ```
 							
 						</p>
+					</section>
+					<section>
+						<h3>What to do with pdb namespace collisions?</h3>
+						<p data-markdown>
+```python
+n = len(cols)
+```
+						<p class="fragment">use locals</p>
+						</p>
+						<p data-markdown class="fragment">
+```python
+my_n = locals()['n']
+```
+						</p>
+
 					</section>
                 </section>
 
