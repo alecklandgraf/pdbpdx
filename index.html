@@ -321,12 +321,14 @@ set_trace()
 							<li>s - step into</li>
 							<li>n - next statement</li>
 							<li>c - continue</li>
-							<li>t - teleport <span style="color: #333;">(jump to)</span></li>
+							<li>t - teleport <span style="color: #333;"><strong>(jump to)</strong></span></li>
 							<li>/ - search</li>
 							<li>m - view a module's source code</li>
 							<li>q - quit</li>
 						</ul>
 					</section>
+				</section>
+				<section>
 					<section>
 						<h3>common debugger patterns</h3>
 						<p>
@@ -369,7 +371,75 @@ n = len(cols)
 						</p>
 						<p data-markdown class="fragment">
 ```python
+# assuming ipython shell in pudb
 my_n = locals()['n']
+```
+						</p>
+
+					</section>
+					<section>
+						<h3>slow code? profile it</h3>
+						<p>YUNOMI - Y U NO MEASURE IT <a href="https://github.com/dreid/yunomi" target="_blank"><i class="fa fa-github"></i></a></p>
+						<p>How many DB queries are you making?</p>
+						<p data-markdown>
+```python
+# django example
+import json
+from django.db import connection, reset_queries
+reset_queries()
+connection.queries = []
+
+# ... code to inspect here
+for user in User.objects.all():
+    # my foreign key lookup per iteration
+	if user.profile.address == addr:
+	    user.send_notification(notification)
+
+qs = list(connection.queries)
+print 'number of queries made:', len(qs)
+print json.dumps(qs, indent=4)
+
+```
+						</p>
+						<p class="fragment" data-markdown>
+						There are often ways to reduce these:
+```python
+for user in User.objects.all().select_related('profile'):
+```
+						</p>
+					</section>
+					<section>
+						<h3>reduce your footprint</h3>
+                        <ul style="list-style: none;">
+                            <li>important for long running processes: think streams</li>
+                            <li>watch your memory (processes and CPU too): htop</li>
+                            <li>watch the network</li>
+                        </ul>
+                        <p></p>
+						<p>imap vs. map</p>
+						<p data-markdown>
+```python
+from queryset_iterator import queryset_iterator
+sync_to_other_db(
+	session,
+	map(
+		serializer,
+		queryset_iterator(query)
+	)
+)
+```
+						</p>
+						<p class="fragment">this still realizes the entire query in memory</p>
+						<p data-markdown class="fragment">
+```python
+from queryset_iterator import queryset_iterator
+sync_to_other_db(
+	session,
+	itertools.imap(
+		serializer,
+		queryset_iterator(query)
+	)
+)
 ```
 						</p>
 
