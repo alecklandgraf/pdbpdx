@@ -56,7 +56,7 @@
                 	<h2>Why debugging? <span class="fragment">WTF?</span></h2>
                 	<pre class="python"><code class="py" data-trim >
 for j in js:
-    mn = j.get('model','unkown')
+    mn = j.get('model','unknown')
     js2[mn]=js2.get(mn,[])+[j]
                     </code></pre>
                 </section>
@@ -78,23 +78,23 @@ for j in js:
                     <h3>print!</h3>
                     <pre class="python fragment"><code class="py" data-trim >
 for j in js:
-    mn = j.get('model','unkown')
+    mn = j.get('model','unknown')
     js2[mn]=js2.get(mn,[])+[j]
                     </code></pre>
                     <pre class="python fragment"><code class="py" data-trim >
 for j in js:
-    mn = j.get('model','unkown')
+    mn = j.get('model','unknown')
     js2[mn]=js2.get(mn,[])+[j]
     print 'WTF', js2.get(mn,[])+[j]
                     </code></pre>
                     <p class="fragment">better yet</p>
                     <pre class="python fragment"><code class="py" data-trim >
 for j in js:
-    mn = j.get('model','unkown')
+    mn = j.get('model','unknown')
     js2[mn]=js2.get(mn,[])+[j]
     print '\n\nline 72 of time_utils.py WTF', js2.get(mn,[])+[j], '\n\n'
                     </code></pre>
-                    
+
                     </section>
 
                     <section>
@@ -105,7 +105,7 @@ for j in js:
     </content>
     <tabTrigger>pppp</tabTrigger>
     <scope>source.python.django</scope>
-    <description>print "\n\n\n...", ..., "\n\n\n"</description> 
+    <description>print "\n\n\n...", ..., "\n\n\n"</description>
 </snippet>
 
                     </code></pre>
@@ -116,7 +116,7 @@ for j in js:
 import logging
 logger = logging.getLogger(__name__)
 for j in js:
-    mn = j.get('model','unkown')
+    mn = j.get('model','unknown')
     js2[mn]=js2.get(mn,[])+[j]
     logger.debug('\n\nline 72 of time_utils.py WTF', js2.get(mn,[])+[j], '\n\n')
                     </code></pre>
@@ -141,7 +141,7 @@ for j in js:
                 			<li>tab completion</li>
                 			<li>? and ??</li>
                 			<li>%history</li>
-                			<li>%cpaste and %pate</li>
+                			<li>%cpaste and %paste</li>
                 			<li>%autoindent</li>
                 			<li>os commands work: cd ls</li>
                 			<li>notebook</li>
@@ -347,7 +347,7 @@ set_trace()
 for u in users:
     u.set_home_location()
 ```
-							
+
 						</p>
 						<p class="fragment">BLAMO!!! OK, try this...</p>
 						<p data-markdown class="fragment">
@@ -358,7 +358,7 @@ for u in users:
     except KeyError:
         import pudb; pudb.set_trace()
 ```
-							
+
 						</p>
 					</section>
 					<section>
