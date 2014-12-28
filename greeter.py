@@ -6,3 +6,7 @@ class Greeter(object):
     def greet(self):
         """prints hello ``self.name``"""
         print 'hello {}'.format(self.name)
+
+
+g = Greeter()
+g.greet('me')

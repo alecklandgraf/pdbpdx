@@ -152,6 +152,25 @@ for j in js:
                 <section>
                     <section>
                         <h2>tracebacks</h2>
+                        <pre class="shell"><code class="shell" data-trim >
+  File "django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "seed/utils/api.py", line 91, in _wrapped
+    return fn(request, *args, **kwargs)
+  File "annoying/decorators.py", line 164, in wrapper
+    response = func(request, *args, **kwargs)
+  File "superperms/orgs/decorators.py", line 197, in _wrapped
+    return fn(request, *args, **kwargs)
+  File "django/contrib/auth/decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "ecm/views.py", line 150, in update_ecm
+    ecm.mapped_data.update(ecm_data.get('mapped_data'), {})
+                    </code></pre>
+                    </section>
+                    <section>
+                        <h2>use an error logging service</h2>
+                        <p>like getsentry.com</p>
+                        <img src="traceback.png" height="600" alt="traceback">
                     </section>
                 </section>
 
