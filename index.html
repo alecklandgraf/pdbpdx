@@ -327,12 +327,15 @@ Out[4]: {'name': 'Aleck'}
                         <h2>using a debugger</h2>
                         <p>pdb ships with python</p>
                         <p class="fragment">ipdb (not "The Internet Pinball Machine Database")</p>
-                        <p class="fragment">PuDB (u == uwrid: full-screen, console based)</p>
+                        <p class="fragment">PuDB ('Urwid': full-screen, console based)</p>
                     </section>
                     <section>
                         <h2>ipdb</h2>
-                        <p>all the wonder of ipython plus some neat tricks</p>
-                        <p>post-mortem: <code>ipdb.pm()</code></p>
+                        <p>all the wonder of ipython plus some neat tricks:</p>
+                        <ul>
+                            <li>with launch_ipdb_on_exception():</li>
+                            <li>ipython --pdb main.py</li>
+                        </ul>
                     </section>
                 	<section>
 	                    <h2>pudb</h2>
@@ -429,12 +432,13 @@ for u in users:
 ```python
 n = len(cols)
 ```
-						<p class="fragment">use locals</p>
+						<p class="fragment">use locals() or !command</p>
 						</p>
 						<p data-markdown class="fragment">
 ```python
 # assuming ipython shell in pudb
 my_n = locals()['n']
+!n
 ```
 						</p>
 
