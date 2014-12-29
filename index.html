@@ -166,6 +166,7 @@ for j in js:
     return view_func(request, *args, **kwargs)
   File "ecm/views.py", line 150, in update_ecm
     ecm.mapped_data.update(ecm_data.get('mapped_data'), {})
+TypeError: update expected at most 1 arguments, got 2
                     </code></pre>
                     </section>
                     <section>
@@ -183,17 +184,16 @@ for j in js:
                 <section>
                 	<section>
                 		<h2>entering the shell</h2>
-                		<p>with <strong>ipython</strong> &nbsp;<i class="fa fa-terminal"></i></p>
-                		<ul>
-                			<li>tab completion</li>
-                			<li>? and ??</li>
-                			<li>%history</li>
-                			<li>%cpaste and %paste</li>
-                			<li>%autoindent</li>
-                			<li>os commands work: cd ls</li>
-                			<li>notebook</li>
-                			<li>%pastebin <i class="fa fa-github"></i></li>
-                			<li>check out %magic or %quickref</li>
+                		<p>with <strong>ipython's</strong> rich feature set</p>
+                		<ul style="list-style: none;">
+                			<li><i class="fa fa-terminal"></i> &nbsp;tab completion</li>
+                			<li><i class="fa fa-terminal"></i> &nbsp;? and ??</li>
+                			<li><i class="fa fa-terminal"></i> &nbsp;%history</li>
+                			<li><i class="fa fa-terminal"></i> &nbsp;%cpaste and %paste</li>
+                			<li><i class="fa fa-terminal"></i> &nbsp;%autoindent</li>
+                			<li><i class="fa fa-terminal"></i> &nbsp;some OS commands work: cd, ls</li>
+                			<li><i class="fa fa-terminal"></i> &nbsp;ipython notebook</li>
+                			<li><i class="fa fa-terminal"></i> &nbsp;%pastebin <i class="fa fa-github"></i></li>
                 		</ul>
             		</section>
             		<section>
@@ -325,7 +325,10 @@ Out[4]: {'name': 'Aleck'}
                 <section>
                 	<section>
 	                    <h2>pudb</h2>
-                        <p>todo: Add screenshot here</p>
+                        <img src="pudb.png" height="600" alt="traceback">
+                    </section>
+                    <section>
+                        <h2>features</h2>
 	                    <p>
 		                    <ul>
 		                        <li>view local variables</li>
@@ -535,20 +538,22 @@ sync_to_other_db(
                 <section>
                     <h2>Stellar Resources</h2>
                     <ul>
+                        <li>your friends</li>
                         <li><a href="http://stackoverflow.com/">Stack Overflow</a></li>
                         <li><a href="https://docs.python.org">Python docs</a></li>
                         <li><a href="https://pypi.python.org/pypi/ipython">ipython</a></li>
                         <li><a href="https://pypi.python.org/pypi/pudb">pudb</a></li>
                         <li><a href="https://pypi.python.org/pypi/nose-pudb">nose + pudb</a></li>
                         <li><a href="https://getsentry.com/welcome/">sentry</a></li>
+                        <li><a href="https://newrelic.com/">newrelic</a></li>
 
                     </ul>
                 </section>
 
                 <section>
                     <h1>THE END</h1>
-                    <h3>Aleck Landgraf / aleck.landgraf@gmail.com </h3>
                     <h3><i class="fa fa-comments"></i> comments</h3>
+                    <p><small>aleck.landgraf@gmail.com </small></p>
                 </section>
 
             </div>
