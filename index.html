@@ -540,14 +540,36 @@ sync_to_other_db(
                 </section>
 
                 <section>
-                	<h2>steps to prevent debugging</h2>
-                	<ol>
-                		<li>you have a <strong>linter,</strong> right?</li>
-                		<li>access to all errors and tracebacks?</li>
-                		<li><strong>flake8</strong> should pass for tests to pass</li>
-                		<li>draw a line in the sand: enforce code <strong>coverage</strong></li>
-                		<li>add tests to prevent regressions</li>
-                	</ol>
+                    <section>
+                        <h2>steps to prevent debugging</h2>
+                        <ol>
+                            <li>you have a <strong>linter,</strong> right?</li>
+                            <li>access to all errors and tracebacks?</li>
+                            <li><strong>flake8</strong> should pass for tests to pass</li>
+                            <li>draw a line in the sand: enforce code <strong>coverage</strong></li>
+                            <li>add tests to prevent regressions</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>a quick note on coverage</h2>
+                        <h3>How much is enough?</h3>
+                        <p>I don't know, but any amount prevents technical debt.</p>
+                        <p data-markdown >
+```console
+Name          Stmts   Miss  Cover   Missing
+-------------------------------------------
+espm              8      0   100%
+espm.espm        97      3    97%   109-112
+espm.models     276      0   100%
+espm.util        19      0   100%
+-------------------------------------------
+TOTAL           400      3    99%
+----------------------------------------------------------------------
+Ran 32 tests in 0.255s
+```
+                        </p>
+                    <p>very easy to require tests to cover XX% for tests to pass</p>
+                    </section>
                 </section>
 
                 <section>
