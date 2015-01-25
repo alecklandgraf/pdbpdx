@@ -82,9 +82,6 @@ for j in js:
                         <h2>here's what mine looks like</h2>
                         <img width="900" height="auto" src="linter.png" alt="linter">
                     </section>
-                    <section>
-                            <p>No excuses: your editor of choice supports one!</p>
-                    </section>
                 </section>
 
                 <section>
@@ -109,24 +106,9 @@ for j in js:
     js2[mn]=js2.get(mn,[])+[j]
     print '\n\nline 72 of time_utils.py WTF', js2.get(mn,[])+[j], '\n\n'
                     </code></pre>
-
-                    </section>
-
-                    <section>
-                    <h2>Sublime Snippet to do just that!</h2>
-                    <pre class="xml"><code class="xml">
-<snippet>
-    <content><![CDATA[print "\n\n\nline $TM_LINE_NUMBER of $TM_FILENAME", ${0:var name}, "\n\n\n"]]>
-    </content>
-    <tabTrigger>pppp</tabTrigger>
-    <scope>source.python.django</scope>
-    <description>print with line number and filename</description>
-</snippet>
-
-                    </code></pre>
                     </section>
                     <section>
-                        <h4>and of course, you might have to use logger</h4>
+                        <h4>and of course, you might want to use logger</h4>
                         <pre class="python"><code class="py" data-trim >
 import logging
 logger = logging.getLogger(__name__)
@@ -185,15 +167,15 @@ TypeError: update expected at most 1 arguments, got 2
                 	<section>
                 		<h2>entering the shell</h2>
                 		<p>with <strong>ipython's</strong> rich feature set</p>
-                		<ul style="list-style: none;">
-                			<li><i class="fa fa-terminal"></i> &nbsp;tab completion</li>
-                			<li><i class="fa fa-terminal"></i> &nbsp;? and ??</li>
-                			<li><i class="fa fa-terminal"></i> &nbsp;%history</li>
-                			<li><i class="fa fa-terminal"></i> &nbsp;%cpaste and %paste</li>
-                			<li><i class="fa fa-terminal"></i> &nbsp;%autoindent</li>
-                			<li><i class="fa fa-terminal"></i> &nbsp;some OS commands work: cd, ls</li>
-                			<li><i class="fa fa-terminal"></i> &nbsp;ipython notebook</li>
-                			<li><i class="fa fa-terminal"></i> &nbsp;%pastebin <i class="fa fa-github"></i></li>
+                		<ul>
+                			<li>tab completion</li>
+                			<li>? and ??</li>
+                			<li>%history</li>
+                			<li>%cpaste and %paste</li>
+                			<li>%autoindent</li>
+                			<li>some OS commands work: cd, ls</li>
+                			<li>ipython notebook</li>
+                			<li>%pastebin <i class="fa fa-github"></i></li>
                 		</ul>
             		</section>
             		<section>
@@ -249,7 +231,7 @@ Out[4]: {'name': 'Aleck'}
                         </p>
                     </section>
                 	<section>
-                		<h3>install ipython</h3>
+                		<h3>ipython</h3>
                 		<p data-markdown>
 ```console
 $ pip install ipython
@@ -282,16 +264,12 @@ time.asctime       time.daylight      time.mktime        time.strptime      time
                 		<p data-markdown>
 ```pycon
 In [1]: class Greeter(object):
-    def __init__(self, name='Aleck'):
-        super(Greeter, self).__init__()
-        self.name = name
-
+    ...
     def greet(self):
         """prints hello ``self.name``"""
         print 'hello {}'.format(self.name)
 
 In [2]: d = Greeter()
-
 ```
                 		</p>
                 		<p class="fragment">?</p>
@@ -303,7 +281,6 @@ String form: <bound method Greeter.greet of <__main__.Greeter object at 0x10396b
 File:        /code/pdbpdx/<ipython-input-13-2d3119123697>
 Definition:  d.greet(self)
 Docstring:   prints hello ``self.name``
-
 ```
                 		</p>
                 		<p class="fragment">??</p>
@@ -316,7 +293,6 @@ Source:
     def greet(self):
         """prints hello ``self.name``"""
         print 'hello {}'.format(self.name)
-
 ```
                 		</p>
                 	</section>
@@ -396,7 +372,7 @@ set_trace()
 				</section>
 				<section>
 					<section>
-						<h3>common debugger patterns</h3>
+						<h3>common debugging patterns</h3>
 						<p>
 							<ul>
 								<li>handle errors over long iterations</li>
@@ -538,7 +514,6 @@ sync_to_other_db(
                     <section>
                         <h2>a quick note on coverage</h2>
                         <h3>How much is enough?</h3>
-                        <p>I don't know, but any amount prevents technical debt.</p>
                         <p data-markdown >
 ```console
 Name          Stmts   Miss  Cover   Missing
