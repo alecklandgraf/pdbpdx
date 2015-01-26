@@ -310,6 +310,12 @@ Source:
                         <h2>ipdb</h2>
                         <p>all the wonder of ipython plus some neat tricks:</p>
                         <ul>
+                            <li>pip install ipdb</li>
+                            <li data-markdown>90% use case: <p>
+```python
+from ipdb import set_trace; set_trace()
+```
+                            </p></li>
                             <li data-markdown>`with launch_ipdb_on_exception():`</li>
                             <li>ipython --pdb main.py</li>
                         </ul>
@@ -470,33 +476,7 @@ sync_to_other_db(
                     </section>
                     <section>
 						<p>imap vs. map</p>
-						<p data-markdown>
-```python
-from queryset_iterator import queryset_iterator
-sync_to_other_db(
-	session,
-	map(
-		serializer,
-		queryset_iterator(huge_query)
-	)
-)
-```
-						</p>
-						<p class="fragment">this still realizes the entire query in memory</p>
-						<p data-markdown class="fragment">
-```python
-from queryset_iterator import queryset_iterator
-import itertools
-sync_to_other_db(
-	session,
-	itertools.imap(
-		serializer,
-		queryset_iterator(huge_query)
-	)
-)
-```
-						</p>
-
+                        <p>items vs. iteritems</p>
 					</section>
                 </section>
 
