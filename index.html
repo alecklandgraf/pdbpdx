@@ -382,14 +382,12 @@ set_trace()
 				<section>
 					<section>
 						<h3>common debugging patterns</h3>
-						<p>
-							<ul>
-								<li>handle errors over long iterations</li>
-								<li>access local variables with names like: 'n', 'c', 'q', 's'</li>
-								<li>profile: memory, counts, CPU</li>
-								<li>flake8 (linter)</li>
-							</ul>
-						</p>
+                        <aside class="notes">
+                        Errors over long iterations,
+                        Access local vars with pdb namespace collisions,
+                        Profile,
+                        Linter
+                        </aside>
 					</section>
 					<section>
 						<h3>handle errors over long iterations</h3>
@@ -410,6 +408,18 @@ for u in users:
         import pudb; pudb.set_trace()
 ```
 
+                        </p>
+                        <p class="fragment">Can't run in the shell. OK, try this...</p>
+                        <p data-markdown class="fragment">
+```python
+for u in users:
+    try:
+        u.set_home_location()
+    except KeyError:
+        from traceback import print_exc
+        print_exc()  # or log
+```
+
 						</p>
 					</section>
 					<section>
@@ -418,8 +428,6 @@ for u in users:
 ```python
 n = len(cols)
 ```
-						<p class="fragment">use locals() or !command</p>
-						</p>
 						<p data-markdown class="fragment">
 ```python
 # assuming ipython shell in pudb
@@ -431,55 +439,20 @@ my_n = locals()['n']
 
 					</section>
 					<section>
-						<h3>slow code?</h3>
-                        <p data-markdown>profile it: `yunomi` and `memory_profiler`</p>
-						<p>How many DB queries are you making?</p>
-						<p data-markdown>
-```python
-# django example
-from django.db import connection
-connection.queries = []
-# ... code to inspect here
-print(list(connection.queries))
-```
-						</p>
-					</section>
-					<section>
-						<h3>reduce your footprint</h3>
-                        <ul style="list-style: none;">
-                            <li>important for long running processes: think streams </li>
-                            <li>watch your memory (processes and CPU too): htop and memory_profiler</li>
-                            <li>watch the network: use a network analyzer or log network requests</li>
-                        </ul>
-                        <p></p>
-                        <p data-markdown>
-```python
-sync_to_other_db(
-    session,
-    map(
-        serializer,
-        huge_query
-    )
-)
-```
-                    </p>
-                    <p>chunk your data <a href="https://github.com/gxx/django-queryset-iterator" target="_blank"><i class="fa fa-github"></i></a></p>
-                    <p data-markdown>
-```python
-from queryset_iterator import queryset_iterator
-sync_to_other_db(
-    session,
-    map(
-        serializer,
-        queryset_iterator(huge_query)
-    )
-)
-```
-                    </p>
+						<h3>slow code? profile it</h3>
+                        <p>count and time things!</p>
+                        <aside class="notes">
+                        yunomi (mean time and # of, memory_profiler, DB counts
+                        </aside>
                     </section>
                     <section>
-						<p>imap vs. map</p>
-                        <p>items vs. iteritems</p>
+                        <h3>reduce your footprint</h3>
+
+                        <ul>
+                            <li>map vs. imap</li>
+                            <li>items vs. iteritems</li>
+                            <li>stream files and chuck large DB queries</li>
+                        </ul>
 					</section>
                 </section>
 
@@ -496,6 +469,9 @@ sync_to_other_db(
                     </section>
                     <section>
                         <h2>a quick note on coverage</h2>
+                        <img width="550" height="auto" src="images/coverage.png" alt="lint">
+                    </section>
+                    <section>
                         <h3>How much is enough?</h3>
                         <p data-markdown >
 ```console
