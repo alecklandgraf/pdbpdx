@@ -1,8 +1,10 @@
-# flake8: noqa
+
 """
 thanks:
-http://stackoverflow.com/questions/566746/how-to-get-console-window-width-in-python
+http://stackoverflow.com/questions/566746/\
+how-to-get-console-window-width-in-python
 """
+
 
 def getTerminalSize():
     """
@@ -10,8 +12,10 @@ def getTerminalSize():
     """
     import os
     import struct
+
     def ioctl_GWINSZ(fd):
-        import fcntl, termios
+        import fcntl
+        import termios
         return struct.unpack("hh", fcntl.ioctl(fd, termios.TIOCGWINSZ, "1234"))
     # try stdin, stdout, stderr
     for fd in (0, 1, 2):
