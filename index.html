@@ -47,7 +47,7 @@
             <div class="slides">
                 <section>
                     <h1>PDB PDX <i class="fa fa-bug fa-spin"></i></h1>
-                    <h3>debugging made easy</h3>
+                    <h3>debugging for humans</h3>
                     <p>
                         <small>Created by Aleck Landgraf and friends &nbsp;/ <a href="http://twitter.com/aleck_landgraf"><i class="fa fa-twitter">&nbsp;</i></a>@aleck_landgraf /  <a href="http://aleck.me/pdbpdx/"><i class="fa fa-slideshare"></i> aleck.me/pdbpdx</a></small>
                     </p>
@@ -189,10 +189,10 @@ TypeError: update expected at most 1 arguments, got 2
                 		</ul>
                 		<p class="fragment" data-markdown>
 ```pycon
-In [1]: time.time()
-Out[1]: 1417210518.229331
+In [1]: requests.get('http://api.openweathermap.org/data/2.5/weather?id=5746545')
+Out[1]: Response [200]
 
-In [2]: t = _
+In [2]: response = _
 ```
                 		</p>
                 	</section>
@@ -376,6 +376,9 @@ set_trace()
 						</ul>
 					</section>
 				</section>
+                <section>
+                    <h3>peanut butter demo time</h3>
+                </section>
 				<section>
 					<section>
 						<h3>common debugging patterns</h3>
