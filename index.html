@@ -58,7 +58,8 @@
                         <ul>
                             <li>VP Software Engineering at Building Energy</li>
                             <li>startups for the last 4+ years</li>
-                            <li>mostly python+Django and various JS</li>
+                            <li>mostly python with Django and various JS</li>
+                            <li>ping ping champion</li>
                         </ul>
                     </section>
             </section>
@@ -122,22 +123,25 @@ for j in js:
                         <pre class="python"><code class="py" data-trim >
 import logging
 logger = logging.getLogger(__name__)
+logging.basicConfig(format='%(filename)s:%(lineno)s - %(message)s')
 for j in js:
     mn = j.get('model','unknown')
     js2[mn]=js2.get(mn,[])+[j]
-    logger.debug('\n\nline 72 of time_utils.py WTF', js2.get(mn,[])+[j], '\n\n')
+    logger.debug(js2.get(mn,[])+[j])
                     </code></pre>
 
                     </section>
                     <section>
                     	<h3>what to print?</h3>
-                    	<ul>
-                    		<li>type(obj)</li>
-                    		<li>len(obj)</li>
+                        <aside class="notes">
+                        <ul>
+                            <li>type(obj)</li>
+                            <li>len(obj)</li>
                             <li>obj.__dict__</li>
                             <li>iteration counts</li>
-                    		<li>code paths hit</li>
-                    	</ul>
+                            <li>code paths hit</li>
+                        </ul>
+                        </aside>
                     </section>
                 </section>
 
@@ -181,12 +185,18 @@ TypeError: update expected at most 1 arguments, got 2
                 			<li>tab completion</li>
                 			<li>? and ??</li>
                 			<li>%history</li>
-                			<li>%cpaste and %paste</li>
-                			<li>%autoindent</li>
-                			<li>some OS commands work: cd, ls</li>
-                			<li>ipython notebook</li>
-                			<li>%pastebin <i class="fa fa-github"></i></li>
+                            <li>... so much more</li>
                 		</ul>
+                        <aside class="notes">
+                            <ul>
+                                <li>paste and cpaste</li>
+                                <li>run</li>
+                                <li>time</li>
+                                <li>auto indent</li>
+                                <li>pastbin</li>
+                                <li>ipython notebook</li>
+                            </ul>
+                        </aside>
             		</section>
             		<section>
                 		<p>
@@ -311,10 +321,13 @@ Source:
 
                 <section>
                     <section>
-                        <h2>using a debugger</h2>
-                        <p>pdb ships with python</p>
-                        <p class="fragment">ipdb (not "The Internet Pinball Machine Database")</p>
-                        <p class="fragment">PuDB ('Urwid': full-screen, console based)</p>
+                        <h2>picking a debugger</h2>
+                    </section>
+                    <section>
+                        <h2>pdb</h2>
+                        <blockquote>
+                        &ldquo;batteries included&rdquo;
+                    </blockquote>
                     </section>
                     <section>
                         <h2>ipdb</h2>

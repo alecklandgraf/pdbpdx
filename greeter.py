@@ -1,3 +1,6 @@
+"""Linter demo"""
+
+
 class Greeter(object):
     """our greeter"""
     def __init__(self, name='Aleck'):
