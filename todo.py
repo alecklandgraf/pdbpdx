@@ -1,4 +1,10 @@
 import json
+import logging
+FORMAT = (
+    "%(levelname)s [%(filename)s:%(lineno)s - %(funcName)20s() ] %(message)s"
+)
+logging.basicConfig(format=FORMAT, level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 
 class ToDo(object):
@@ -11,8 +17,8 @@ class ToDo(object):
         td.add('buy sunscreen')
         td.check('buy hat')
         print td  # or just `td` from the shell
-        >>> [X] buy hat
-        >>> [ ] buy sunscreen
+        >> [X] buy hat
+        >> [ ] buy sunscreen
 
         ## dump and load a todo list via json
         td.dump()
@@ -46,6 +52,7 @@ class ToDo(object):
         return json.loads(todos)
 
     def add(self, item):
+        logger.debug('adding todo: {}'.format(item))
         self.todos.append({'checked': False, 'item': item})
 
     def check(self, item):
