@@ -56,6 +56,7 @@ class ToDo(object):
         self.todos.append({'checked': False, 'item': item})
 
     def check(self, item):
+        logger.debug('checking todo: {}'.format(item))
         for td in self.todos:
             if td['item'] == item:
                 td['checked'] = True
