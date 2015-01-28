@@ -1,6 +1,6 @@
 """demo logging
 Usage:
-    $ python run_todo.py
+    $ python demo_logging.py
 """
 
 from todo import ToDo
