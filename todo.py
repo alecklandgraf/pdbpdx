@@ -80,3 +80,6 @@ class ToDo(object):
             checked=checked,
             item=td['item']
         )
+
+    def remove(self, item):
+        logger.warning('not implemented')

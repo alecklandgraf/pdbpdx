@@ -12,6 +12,7 @@ def main():
     td.add('get some new shades')
     td.check('build up tolerance to spice')
     print td
+    td.remove('get some new shades')
 
 if __name__ == "__main__":
     main()
