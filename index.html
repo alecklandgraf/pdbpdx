@@ -323,6 +323,12 @@ Source:
                         <blockquote>
                         &ldquo;batteries included&rdquo;
                     </blockquote>
+                    <p data-markdown>
+```python
+from pdb import set_trace
+set_trace()
+```
+                            </p>
                     </section>
                     <section>
                         <h2>ipdb</h2>
@@ -342,45 +348,18 @@ set_trace()
                 	<section>
 	                    <h2>pudb</h2>
                         <img src="images/pudb.png" height="600" alt="traceback">
+                        <aside class="notes">
+                            <ul>
+                                <li>view local variables: type, repr</li>
+                                <li>create watches</li>
+                                <li>jump into ipython shell (and create vars)</li>
+                                <li>enter exceptions!</li>
+                                <li>jump through stack</li>
+                                <li>view return before returning</li>
+                            </ul>
+                        </aside>
                     </section>
-                    <section>
-                        <h2>features</h2>
-	                    <p>
-		                    <ul>
-		                        <li>view local variables</li>
-		                        <li>create watches</li>
-		                        <li>jump into ipython shell (and create vars)</li>
-								<li>enter exceptions!</li>
-								<li>jump through stack</li>
-								<li>view return before returning</li>
-		                    </ul>
-	                    </p>
-                	</section>
-                	<section>
-                    <h3>
-                    	Getting started
-                    </h3>
-                    <ul>
-                    	<p>install</p>
-                    	<li data-markdown>```console
-$ pip install pudb
-                    	```</li>
-                    	<p>run a script through pudb</p>
-                    	<li data-markdown>```console
-$ python -m pudb.run script.py
-                    	```</li>
-                    	<p>run tests with pudb</p>
-                    	<li data-markdown>```console
-$ nosetests --pudb
-                    	```</li>
-                    	<p>within your code</p>
-                    	<li data-markdown>```python
-from pudb import set_trace
-set_trace()
-```
-						</li>
-                    </ul>
-                	</section>
+
 					<section>
 						<h3>pudb cheat sheet</h3>
 	                    <ul>
