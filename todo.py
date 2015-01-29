@@ -99,7 +99,12 @@ class ToDo(object):
 
     def remove(self, item):
         logger.warning('not working')
-        self.todos = filter(lambda td: td['checked'] != item, self.todos)
+        # could be filter(lambda td: td != item, self.todos)
+        new_todos = []
+        for td in self.todos:
+            if td != item:
+                new_todos.append(td)
+        self.todos = new_todos
 
     @property
     def completed(self):

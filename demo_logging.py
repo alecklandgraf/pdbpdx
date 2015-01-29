@@ -15,6 +15,8 @@ def main():
     print(td)
     print('completed ' + str(td.completed))
     print('left ' + str(td.not_completed))
+
+    # save our todo
     with open('workfile', 'w') as f:
         td.dump(f)
 
